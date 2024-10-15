@@ -8,8 +8,13 @@ const App = () => {
     ten: "Duy",
     age: "20",
     collage: "stu"
-
   }
+
+  const addNewTodo = (data) => {
+    alert(`addNewTodo ${data}`);
+  }
+
+
   return (
     <div className="ToDo-Container">
       <TodoTittle
@@ -19,6 +24,7 @@ const App = () => {
       />
 
       <TodoGetData
+        addNewTodo={addNewTodo}
         name = {index.ten}
         age ={index.age}
         collage = {index.collage}
