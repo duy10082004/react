@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './components/todo/todo.css';
 import TodoDaTa from './components/todo/TodoData';
 import TodoGetData from './components/todo/TodoGetData';
@@ -14,6 +15,10 @@ const App = () => {
     alert(`addNewTodo ${data}`);
   }
 
+  const [newTodoList, setNewTodoList] = useState ([
+    {id: 1, data: "learn react"},
+    {id: 2, data: "learn javascript"},
+  ]);
 
   return (
     <div className="ToDo-Container">
@@ -28,12 +33,14 @@ const App = () => {
         name = {index.ten}
         age ={index.age}
         collage = {index.collage}
+
       />
 
       <TodoDaTa 
         name = {index.ten}
         age ={index.age}
         collage = {index.collage}
+        newTodoList={newTodoList}
       />
       
     </div>

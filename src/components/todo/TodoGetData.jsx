@@ -1,29 +1,41 @@
+import { useState } from 'react';
 import './todo.css'
 
 
 
 const TodoGetData = (props) => {
     const {addNewTodo} = props;
-    const handleClick = () => {
-      alert ("clicked");
-    }
+    const [todoList , setTodoList] = useState ()
+
+  
 
     const handleOnChange = (index) => {
-      console.log ("u Have Typed : ", index);
+      //console.log ("u Have Typed : ", index);
+      setTodoList(index);
+      //(index) => handleClick(index);
     }
 
-
+    const handleClick = () => {
+      console.log ("click: ", todoList);
+      alert (`clicked ${todoList}`);
+    }
 
     //addNewTodo("duy dep trai");
     return (
-        <div className="container-input">
+      <div className="container-input">
         <input className="input" type="text" 
           onChange = {(event) => handleOnChange(event.target.value)}
         />
         <button className="button" onClick = {handleClick} style = {{cursor: "pointer"}}>
-          ADD</button>
+          ADD
+        </button>
 
+        <div>
+          what u typed : {todoList}
+        </div>
       </div >
+
+
     );
 }
 

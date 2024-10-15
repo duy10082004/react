@@ -1,10 +1,10 @@
 import './todo.css'
 
 const TodoDaTa = (props) => {
-const {name, age, collage} = props
+const {name, age, collage, newTodoList} = props
     return (
         <div className="todo-Data">
-        learn More {name}
+        {JSON.stringify(props.newTodoList)}
       </div>
     );
 }
