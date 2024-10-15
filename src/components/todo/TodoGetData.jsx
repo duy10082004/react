@@ -4,12 +4,24 @@ import './todo.css'
 
 const TodoGetData = (props) => {
     const {addNewTodo} = props;
+    const handleClick = () => {
+      alert ("clicked");
+    }
 
-    addNewTodo("duy dep trai");
+    const handleOnChange = (index) => {
+      console.log ("u Have Typed : ", index);
+    }
+
+
+
+    //addNewTodo("duy dep trai");
     return (
         <div className="container-input">
-        <input className="input" type="text" />
-        <button className="button">ADD</button>
+        <input className="input" type="text" 
+          onChange = {(event) => handleOnChange(event.target.value)}
+        />
+        <button className="button" onClick = {handleClick} style = {{cursor: "pointer"}}>
+          ADD</button>
 
       </div >
     );
