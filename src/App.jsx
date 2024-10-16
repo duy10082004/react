@@ -11,14 +11,28 @@ const App = () => {
     collage: "stu"
   }
 
-  const addNewTodo = (data) => {
-    alert(`addNewTodo ${data}`);
-  }
 
   const [newTodoList, setNewTodoList] = useState ([
     {id: 1, data: "learn react"},
     {id: 2, data: "learn javascript"},
   ]);
+
+  const randomIntFromInterval = (min, max) => { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
+
+  const addNewTodo = (data) => {
+    const newTodoData = {
+      id : randomIntFromInterval(3, 100),
+      data : data,
+    }
+
+    setNewTodoList([...newTodoList, newTodoData]);
+
+    console.log("object count : ", newTodoData);
+  }
+
+
 
   return (
     <div className="ToDo-Container">

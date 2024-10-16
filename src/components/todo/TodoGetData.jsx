@@ -16,8 +16,7 @@ const TodoGetData = (props) => {
     }
 
     const handleClick = () => {
-      console.log ("click: ", todoList);
-      alert (`clicked ${todoList}`);
+      addNewTodo(todoList); 
     }
 
     //addNewTodo("duy dep trai");
